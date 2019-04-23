@@ -7,14 +7,19 @@
 import Foundation
 import Stencil
 
-enum Filters {
+public enum Filters {
   typealias BooleanWithArguments = (Any?, [Any?]) throws -> Bool
+}
 
+
+public extension Filters {
   enum Error: Swift.Error {
     case invalidInputType
     case invalidOption(option: String)
   }
+}
 
+public extension Filters {
   /// Parses filter input value for a string value, where accepted objects must conform to
   /// `CustomStringConvertible`
   ///

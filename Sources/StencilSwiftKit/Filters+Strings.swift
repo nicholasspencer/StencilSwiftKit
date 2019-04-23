@@ -10,22 +10,23 @@ import Stencil
 
 // MARK: - Strings Filters
 
-extension Filters {
-    enum Strings {
+public extension Filters {
+    enum Strings {}
+}
+
+public extension Filters.Strings {
+    enum RemoveNewlinesModes: String {
+      case all, leading
     }
-}
 
-enum RemoveNewlinesModes: String {
-  case all, leading
-}
-
-enum SwiftIdentifierModes: String {
-  case normal, pretty
+    enum SwiftIdentifierModes: String {
+      case normal, pretty
+    }
 }
 
 // MARK: - String Filters: Boolean filters
 
-extension Filters.Strings {
+public extension Filters.Strings {
   /// Checks if the given string contains given substring
   ///
   /// - Parameters:
@@ -71,7 +72,7 @@ extension Filters.Strings {
 
 // MARK: - String Filters: Lettercase filters
 
-extension Filters.Strings {
+public extension Filters.Strings {
   /// Lowers the first letter of the string
   /// e.g. "People picker" gives "people picker", "Sports Stats" gives "sports Stats"
   static func lowerFirstLetter(_ value: Any?) throws -> Any? {
@@ -227,7 +228,7 @@ extension Filters.Strings {
 
 // MARK: - String Filters: Mutation filters
 
-extension Filters.Strings {
+public extension Filters.Strings {
   fileprivate static let reservedKeywords = [
     "associatedtype", "class", "deinit", "enum", "extension",
     "fileprivate", "func", "import", "init", "inout", "internal",
